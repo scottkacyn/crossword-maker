@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <h2>Crossword Puzzle Builder</h2>
+  <div class="grid">
+    <% numbering = 0 %>
+    <% @grid.each_with_index do |cell, row, col| %>
+      <% if col == 0 %>
+        <div class="row">
+      <% end %>
+      <div class="cell <%= cell == 0 ? 'closed' : 'open' %>">
+        <% if cell != 0 && (row == 0 || col == 0 || @grid[row, col-1] == 0 || @grid[row-1, col] == 0) %>
+          <div class="number"><%= numbering += 1 %></div>
+        <% end %>
+        <div class="value"><%= cell.to_s.upcase %></div>
+      </div>
+      <% if col == @grid.column_count-1 %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

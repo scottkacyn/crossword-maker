@@ -1,0 +1,66 @@
+// Place all the styles related to the builder controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  width: 450px;
+  max-width: 100%;
+  margin: 20px;
+  text-align: left;
+}
+
+.grid {
+  border: 1px solid #000;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+.row {
+  border-bottom: 1px solid #000;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.cell {
+  flex: 1 1 30px;
+  width: 30px;
+  height: 30px;
+  border-right: 1px solid #000;
+  position: relative;
+  background: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  .number {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 8px;
+    color: #777;
+  }
+
+  .value {
+  }
+
+  &.closed {
+    background: #000;
+    .number {
+      color: #000;
+    }
+  }
+}
+
+.answers {
+  margin: 10px;
+}
